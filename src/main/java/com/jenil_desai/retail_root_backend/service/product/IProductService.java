@@ -1,13 +1,16 @@
 package com.jenil_desai.retail_root_backend.service.product;
 
 import com.jenil_desai.retail_root_backend.model.Product;
+import com.jenil_desai.retail_root_backend.request.AddProductRequest;
+import com.jenil_desai.retail_root_backend.request.ProductUpdateRequest;
+
 import java.util.List;
 
 public interface IProductService {
-    Product addProduct(Product product);
+    Product addProduct(AddProductRequest request);
     Product getProductById(Long id);
     void deleteProductById(Long id);
-    void updateProduct(Product product,Long productId);
+    Product updateProduct(ProductUpdateRequest product, Long productId);
     List<Product> getAllProducts();
     List<Product> getAllProductsByCategory(String category);
     List<Product> getAllProductsByBrand(String brand);
